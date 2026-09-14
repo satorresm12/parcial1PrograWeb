@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductById } from "@/lib/api";
+import AddToCartButton from "@/components/AddToCartButton";
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -85,11 +86,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   {product.brand ?? "N/A"}
                 </dd>
               </div>
-              <div>
-                <dt className="text-slate-400">SKU</dt>
-                <dd className="font-medium text-slate-900">{product.sku}</dd>
-              </div>
             </dl>
+            <AddToCartButton
+              product={product}
+              className="mt-6 w-full rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700 md:w-auto"
+            />
           </div>
         </div>
       </div>

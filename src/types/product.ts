@@ -1,5 +1,3 @@
-// Tipo reducido usado en el listado del catálogo
-// (coincide con los campos pedidos vía ?select=id,title,price,category,thumbnail,stock)
 export interface ProductSummary {
   id: number;
   title: string;
@@ -30,7 +28,14 @@ export interface ProductDimensions {
   depth: number;
 }
 
-// Tipo completo devuelto por GET /products/{id}
+export interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  thumbnail: string;
+  quantity: number;
+}
+
 export interface ProductDetail extends ProductSummary {
   description: string;
   discountPercentage: number;

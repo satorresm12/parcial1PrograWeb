@@ -6,8 +6,8 @@ export const revalidate = 60;
 export default async function HomePage() {
   const { products } = await getProducts();
   const productCards = [];
-  for (const product of products) {
-    productCards.push(<ProductCard key={product.id} product={product} />);
+  for (const [index, product] of products.entries()) {
+    productCards.push(<ProductCard key={product.id} product={product} priority={index == 0}/>);
   }
 
   return (

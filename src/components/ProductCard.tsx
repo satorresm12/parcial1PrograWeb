@@ -3,7 +3,12 @@ import Image from "next/image";
 import { ProductSummary } from "@/types/product";
 import AddToCartButton from "@/components/AddToCartButton";
 
-export default function ProductCard({ product }: { product: ProductSummary }) {
+interface ProductCardProps {
+  product: ProductSummary;
+  priority?: boolean;
+}
+
+export default function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
       <Link href={`/products/${product.id}`} className="block">
@@ -14,6 +19,7 @@ export default function ProductCard({ product }: { product: ProductSummary }) {
             fill
             sizes="(max-width: 768px) 50vw, 25vw"
             className="object-cover transition group-hover:scale-105"
+            priority={priority}
           />
         </div>
       </Link>

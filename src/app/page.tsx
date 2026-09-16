@@ -5,6 +5,10 @@ export const revalidate = 60;
 
 export default async function HomePage() {
   const { products } = await getProducts();
+  const productCards = [];
+  for (const product of products) {
+    productCards.push(<ProductCard key={product.id} product={product} />);
+  }
 
   return (
     <main className="min-h-screen bg-slate-50 px-6 py-10">
@@ -14,9 +18,7 @@ export default async function HomePage() {
         </header>
 
         <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {productCards}
         </section>
       </div>
     </main>

@@ -9,7 +9,6 @@ const BASE_URL = "https://dummyjson.com";
 export async function getProducts(): Promise<ProductsResponse> {
   const res = await fetch(
     `${BASE_URL}/products?limit=8&select=id,title,price,category,thumbnail,stock`,
-    // Revalida cada 60s (ISR). Cambia a "no-store" si prefieres SSR puro.
     { next: { revalidate: 60 } }
   );
 

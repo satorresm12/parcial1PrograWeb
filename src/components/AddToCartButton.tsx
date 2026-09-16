@@ -20,10 +20,7 @@ export default function AddToCartButton({
   const { addToCart } = useCart();
   const [added, setAdded] = useState(false);
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    e.stopPropagation();
-
+  const handleClick = () => {
     addToCart(product);
     setAdded(true);
     setTimeout(() => setAdded(false), 1200);

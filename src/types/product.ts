@@ -9,23 +9,6 @@ export interface ProductSummary {
 
 export interface ProductsResponse {
   products: ProductSummary[];
-  total: number;
-  skip: number;
-  limit: number;
-}
-
-export interface ProductReview {
-  rating: number;
-  comment: string;
-  date: string;
-  reviewerName: string;
-  reviewerEmail: string;
-}
-
-export interface ProductDimensions {
-  width: number;
-  height: number;
-  depth: number;
 }
 
 export interface CartItem {
@@ -38,18 +21,5 @@ export interface CartItem {
 
 export interface ProductDetail extends ProductSummary {
   description: string;
-  discountPercentage: number;
-  rating: number;
-  tags: string[];
   brand?: string;
-  sku: string;
-  weight: number;
-  dimensions: ProductDimensions;
-  warrantyInformation: string;
-  shippingInformation: string;
-  availabilityStatus: string;
-  reviews: ProductReview[];
-  returnPolicy: string;
-  minimumOrderQuantity: number;
-  images: string[];
 }

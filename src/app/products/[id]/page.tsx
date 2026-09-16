@@ -52,11 +52,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               <span className="text-2xl font-bold text-slate-900">
                 ${product.price}
               </span>
-              {product.discountPercentage > 0 && (
-                <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-700">
-                  -{product.discountPercentage}%
-                </span>
-              )}
             </div>
 
             <p className="mt-4 text-sm leading-relaxed text-slate-600">
@@ -72,12 +67,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   }`}
                 >
                   {product.stock > 0 ? `${product.stock} unidades` : "Agotado"}
-                </dd>
-              </div>
-              <div>
-                <dt className="text-slate-400">Calificación</dt>
-                <dd className="font-medium text-slate-900">
-                  {product.rating} / 5
                 </dd>
               </div>
               <div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductById } from "@/lib/api";
 import AddToCartButton from "@/components/AddToCartButton";
+import ProductQuantityControls from "@/components/ProductQuantityControls";
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -80,6 +81,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
               product={product}
               className="mt-6 w-full rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700 md:w-auto"
             />
+            <ProductQuantityControls productId={product.id} />
           </div>
         </div>
       </div>

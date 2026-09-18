@@ -13,7 +13,11 @@ export default function Header() {
           Shop<span className="text-indigo-600">Hub</span>
         </Link>
 
-        <div className="flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-2">
+        <Link
+          href="/checkout"
+          className="flex items-center gap-2 rounded-full bg-indigo-50 px-4 py-2 transition hover:bg-indigo-100"
+          aria-label="Ir al checkout"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5 text-indigo-600"
@@ -29,9 +33,9 @@ export default function Header() {
             />
           </svg>
           <span className="text-sm font-semibold text-indigo-700">
-            {totalItems}
+            Checkout ({totalItems})
           </span>
-        </div>
+        </Link>
       </div>
     </header>
   );
